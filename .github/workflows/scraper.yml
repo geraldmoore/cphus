@@ -34,6 +34,7 @@ jobs:
         FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
         uv run main.py
       timeout-minutes: 10
