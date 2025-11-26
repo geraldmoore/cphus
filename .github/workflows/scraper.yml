@@ -1,5 +1,8 @@
 name: Scheduled Scraper
 
+permissions:
+  contents: write
+  
 on:
   schedule:
     - cron: '*/15 * * * *'
