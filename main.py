@@ -64,6 +64,7 @@ async def process_boligsiden(manager: ListingsManager, messenger: DiscordMesseng
         mapBounds=get_geometry_bounds_str(geometry),
         polygon=get_geometry_str(geometry),
         rentMax=18500,
+        numberOfRoomsMin=3,
     )
 
     base_url = settings.boligsiden_url
@@ -79,7 +80,7 @@ async def process_boligsiden(manager: ListingsManager, messenger: DiscordMesseng
 
 async def process_boligportal(manager: ListingsManager, messenger: DiscordMessenger):
     # Configure search parameters
-    search_params = BoligportalSearchParams(max_monthly_rent=18500)
+    search_params = BoligportalSearchParams(max_monthly_rent=18500, )
 
     base_url = settings.boligportal_url
 
