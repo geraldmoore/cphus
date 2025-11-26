@@ -5,7 +5,7 @@ from shapely.geometry import shape
 
 from src.cphus.core.config.logging import get_logger
 from src.cphus.core.config.settings import get_settings
-from src.cphus.crawl import BoligportalSearchParams, BoligsidenSearchParams, CrawlListings
+from src.cphus.crawl_gemini import BoligportalSearchParams, BoligsidenSearchParams, CrawlListings
 from src.cphus.crud import ListingsManager
 from src.cphus.discord import DiscordMessenger
 
@@ -30,7 +30,7 @@ async def search_and_send_listings(
 ):
     # Get listings
     crawler = CrawlListings(base_url=base_url, search_params=search_params)
-    all_listings = crawler.scrape_listings(pages=1)
+    all_listings = await crawler.scrape_listings(pages=1)
 
     # Find only new listings
     new_listings, _ = manager.find_new_listings(all_listings)
@@ -80,7 +80,9 @@ async def process_boligsiden(manager: ListingsManager, messenger: DiscordMesseng
 
 async def process_boligportal(manager: ListingsManager, messenger: DiscordMessenger):
     # Configure search parameters
-    search_params = BoligportalSearchParams(max_monthly_rent=18500, )
+    search_params = BoligportalSearchParams(
+        max_monthly_rent=18500,
+    )
 
     base_url = settings.boligportal_url
 
