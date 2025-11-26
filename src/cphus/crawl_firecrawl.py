@@ -69,7 +69,7 @@ class CrawlListings:
         self.base_url = base_url
         self.search_params = search_params
 
-    def scrape_listings(
+    async def scrape_listings(
         self,
         pages: int = 1,
     ):
@@ -103,6 +103,6 @@ class CrawlListings:
 
         return all_listings
 
-    def scrape_all_listings(self):
+    async def scrape_all_listings(self):
         pages = 999
         return self.scrape_listings(pages=pages)
