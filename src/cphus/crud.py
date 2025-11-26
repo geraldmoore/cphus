@@ -415,8 +415,6 @@ class ListingsManager:
         if len(self.df) == 0:
             return pl.DataFrame(new_listings), pl.DataFrame()
 
-        breakpoint()
-
         new_listings_df = pl.DataFrame(new_listings)
         existing_keys = set(self.df[self.unique_key].to_list())
 
