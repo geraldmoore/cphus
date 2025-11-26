@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     firecrawl_api_key: SecretStr
     discord_bot_token: SecretStr
     discord_channel_id: int
+    gemini_api_key: SecretStr
 
     model_config = ConfigDict(env_file=BASE_DIR / ".env", encoding="utf-8")
 
