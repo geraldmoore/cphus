@@ -3,7 +3,6 @@ import discord
 from src.cphus.core.config.logging import get_logger
 from src.cphus.core.config.settings import get_settings
 
-
 logger = get_logger(__name__)
 
 
