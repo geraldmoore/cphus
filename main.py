@@ -5,7 +5,7 @@ from shapely.geometry import shape
 
 from src.cphus.core.config.logging import get_logger
 from src.cphus.core.config.settings import get_settings
-from src.cphus.crawl_gemini import BoligportalSearchParams, BoligsidenSearchParams, CrawlListings
+from src.cphus.crawl_firecrawl import BoligportalSearchParams, BoligsidenSearchParams, CrawlListings
 from src.cphus.crud import ListingsManager
 from src.cphus.discord import DiscordMessenger
 
