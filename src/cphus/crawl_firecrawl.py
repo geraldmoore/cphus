@@ -85,6 +85,8 @@ class CrawlListings:
             params_dict = self.search_params.model_dump(exclude_none=True)
             url = f"{self.base_url}?{urlencode(params_dict)}"
 
+            logger.info(f"URL: {url}")
+
             scrape_status = firecrawl.scrape(
                 url,
                 formats=[

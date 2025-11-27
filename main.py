@@ -44,12 +44,12 @@ async def search_and_send_listings(
         logger.info(f"Found {new_count} new listings!")
         for count, listing in enumerate(new_listings.iter_rows(named=True)):
             listing_url = listing.get("listing_url")
-            await messenger.send_message(listing_url)
+            # await messenger.send_message(listing_url)
             logger.info(f"Sent listing {count + 1} of {new_count}.")
 
     # Add the listings to the database
     logger.info("Messages sent.")
-    _, _ = manager.add_new_listings(new_listings)
+    # _, _ = manager.add_new_listings(new_listings)
 
     logger.info("Listings added to the database.")
 
@@ -101,7 +101,7 @@ async def main():
 
     # Boligsiden
     logger.info("Crawling Boligsiden.")
-    await process_boligsiden(manager=manager, messenger=messenger)
+    # await process_boligsiden(manager=manager, messenger=messenger)
 
     # Boligportal
     logger.info("Crawling Boligportal.")
