@@ -101,7 +101,7 @@ async def main():
 
     # Boligsiden
     logger.info("Crawling Boligsiden.")
-    # await process_boligsiden(manager=manager, messenger=messenger)
+    await process_boligsiden(manager=manager, messenger=messenger)
 
     # Boligportal
     logger.info("Crawling Boligportal.")
