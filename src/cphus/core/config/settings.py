@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     discord_bot_token: SecretStr
     discord_channel_id: int
     gemini_api_key: SecretStr
+    pages: int
 
     model_config = ConfigDict(env_file=BASE_DIR / ".env", encoding="utf-8")
 

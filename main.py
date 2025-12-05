@@ -30,7 +30,7 @@ async def search_and_send_listings(
 ):
     # Get listings
     crawler = CrawlListings(base_url=base_url, search_params=search_params)
-    all_listings = await crawler.scrape_listings(pages=1)
+    all_listings = await crawler.scrape_listings(pages=settings.pages)
 
     # Find only new listings
     new_listings, _ = manager.find_new_listings(all_listings)
