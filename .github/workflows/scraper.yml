@@ -35,6 +35,7 @@ jobs:
         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        PAGES: ${{ secrets.PAGES }}
       run: |
         uv run main.py
       timeout-minutes: 10
